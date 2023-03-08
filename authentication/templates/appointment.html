@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content%}
+<!-- MAKE AN APPOINTMENT -->
+<section id="appointment" data-stellar-background-ratio="3">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-6 col-sm-6">
+                <img src="{% static 'images/docform.png' %}" class="img-responsive" alt="">
+            </div>
+
+            <div class="col-md-6 col-sm-6">
+                <!-- CONTACT FORM HERE -->
+                <form id="appointment-form" role="form" method="post" action="#">
+                    <!-- SECTION TITLE -->
+                    <div class="section-title wow fadeInUp" data-wow-delay="0.4s">
+                        <h2>Make an appointment</h2>
+                    </div>
+                    <div class="appt-row">
+                   <div class="appt-data">
+                    <h4>My Name</h4>
+                    <p>{{patient.first_name}} {{patient.last_name}}</p>
+                   </div>
+                <div class="appt-data">
+                    <h4>Doctor Name</h4>
+                    <p>{{doc_obj.name}}</p>
+                </div>
+                <div class="appt-data">
+                    <h4>My Email</h4>
+                    <p>{{patient.email}}</p>
+                </div>
+                <div class="appt-data">
+                    <h4>Doctor's Phone Number</h4>
+                    <p>{{doc_obj.name}}</p>
+                </div>
+                <div class="appt-data">
+                    <h4> Phone Number</h4>
+                    <p>{{patient.phone_no}}</p>
+                </div>
+                <div class="appt-data">
+                    <h4>Doctor's Email</h4>
+                    <p>{{doc_obj.name}}</p>
+                </div>
+                </div>
+                <li class="appointment-btn"><a href="{% url 'hospital:booked' doc_obj.id %}{% if request.GET.next %}?next={{request.GET.next}}{% endif %}">Confirm appointment</a></li>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+{% endblock content %}

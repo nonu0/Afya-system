@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container-detail">
+    <div class="det-row">
+        <div class="img-det">
+            <img src="{% static 'images/doc2.png' %}" alt="" class="img-det">
+          
+        </div>
+        <div class="detail-card">
+            <h5>Category: {{doctor_obj.name}}</h5>
+            <h5>Doctor Occupation: {{doctor_obj.occupation}}</h5>
+            <h5>Doctor Experience: {{doctor_obj.experience}}</h5>
+            <h5>Doctor Consultation Fee: Ksh{{doctor_obj.consultation_fee}}</h5>
+            <a href="{% url 'hospital:appointment' doctor_obj.pk %}" class="login-btn">Make An Appointment</a>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
