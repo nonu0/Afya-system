@@ -15,7 +15,8 @@ SECRET_KEY = 'django-insecure-j&xwe0f8!o($)wou1&myacjh=iqfjkg5q30&^y_sni%k8!^^j6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1','afya-system-production.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://afya-system-production.up.railway.app']
 
 
 # Application definition
