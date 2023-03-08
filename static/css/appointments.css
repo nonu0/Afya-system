@@ -1,0 +1,184 @@
+@import "bourbon";
+
+//color
+$silver : #c9c9c9;
+$white : #fff;
+
+//header-background
+$puerto-rico : #54ccb5;
+
+//font-color
+$viridian : #447F71;
+$boulder : #777777;
+$wild-sand : #f4f4f4;
+
+//button
+$crusta : #FF8939;
+
+body {
+    background-color: $silver;
+}
+
+*{
+}
+
+.plan-container {
+    width: em(460);
+    margin: 30px auto;
+    border-radius: 5px;
+    background-color: $white;
+    position: relative;
+    top: 0;
+    @include transition(all 1s);
+
+    &:hover {
+        cursor: pointer;
+        position: relative;
+        top: -10px;
+        @include transition(top 1s);
+    }
+
+    .plan-header {
+        padding: 50px 0;
+        border-radius: 5px 5px 0 0;
+        background-color: $puerto-rico;
+        text-align: center;
+
+        .icon-box {
+            margin: 0 auto;
+
+            .icon {
+                font-size: em(50);
+                color: $viridian;
+            }
+        }
+
+        h2 {
+            color: $white;
+            font-weight: lighter;
+            margin: 0;
+            padding-top: em(10);
+        }
+
+        p {
+            margin: 0;
+            color: $viridian;
+        }
+    }
+
+    .plan-details {
+        margin: 0 auto;
+        padding: 60px;
+        background: url('http://raventools.com/wp-content/themes/raven-wp-theme-2014/images/plan-bottom-border.png') top center no-repeat;
+
+        ul {
+            padding-left: 0;
+            list-style: none;
+
+            li {
+                border-top: 3px solid #e8edef;
+                padding: 20px 0;
+                font-weight: bold;
+                color: shade($boulder, 20%);
+
+                &:last-child {
+                    border-bottom: 3px solid #e8edef;
+                }
+
+                span {
+                    font-weight: lighter;
+                    color: $boulder;
+                }
+            }
+        }
+
+        //ul
+        p {
+            background-color: $wild-sand;
+            margin: em(32) 0;
+            padding: em(20);
+            font-size: em(12);
+            line-height: 1.8;
+            color: $boulder;
+
+        }
+
+        button {
+            background-color: $crusta;
+            padding: 20px 0;
+            border-radius: 3px;
+            color: $white;
+            text-align: center;
+            width: 100%;
+            border: 0;
+
+            &:hover {
+                background-color: shade($crusta, 10%);
+            }
+        }
+    }
+}
+
+/* Login pages  */
+
+.container-all-login {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+        rgba(0, 0, 0, 0.12) 0px -12px 30px,
+        rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px,
+        rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    background-color: #fff;
+    display: grid;
+    justify-content: center;
+    width: 50%;
+    border-radius: 1rem;
+    padding: 10px;
+    line-height: 2rem;
+    margin-left: 30rem;
+    margin-top: 1rem;
+}
+
+
+.register-head,
+.orders {
+    display: grid;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+.login-btn{
+    background-color: #2225c4;
+    border-radius: 0.5rem;
+    border:none;
+    padding:1.5rem;
+    color:white;
+
+}
+
+/* detail of products */
+
+.container-detail {
+    display: grid;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+        rgba(0, 0, 0, 0.12) 0px -12px 30px,
+        rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px,
+        rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    background-color: #fff;
+    height: auto;
+    border-radius: 1rem;
+    padding: 10px;
+    width: 50%;
+    margin-left:30rem;
+    margin-top:3rem;
+}
+
+.det-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.detail-card {
+    display: grid;
+    font-size: 1.3rem;
+}

@@ -45,7 +45,7 @@ class RegisterView(RegisterLoginPagesMixin,RedirectURLMixin,FormView):
     next_page  = 'hospital:doctors'
     template_name = 'authentication/register.html'
     form_class = RegisterForm
-    success_url = reverse_lazy('account:login')
+    success_url = reverse_lazy('authentication:login')
     permission_classes = (permissions.AllowAny, )
 
     def form_valid(self, form):
@@ -68,7 +68,7 @@ class RegisterView(RegisterLoginPagesMixin,RedirectURLMixin,FormView):
             activation_email(user,self.request)
             messages.add_message(self.request,messages.SUCCESS,
             "We've sent you an email to verify your account")
-            return redirect('account:login')
+            return redirect('authentication:login')
         else:
             raise ValidationError(self.request,'Password fields must match')
     
@@ -89,7 +89,7 @@ def activate_user(request,uidb64,token):
 
         messages.add_message(request,messages.SUCCESS,
         'Email verified,you can now login')
-        return redirect('account:login')
+        return redirect('authentication:login')
 
     return render(request,'activate-failed.html',{'user':user})
 class LoginView(RegisterLoginPagesMixin,RedirectURLMixin,FormView):

@@ -10,7 +10,7 @@ from django.contrib import messages
 class DoctorsView(LoginRequiredMixin,TemplateView):
     next_page  = 'hospital:doctors.html'
     template_name = 'doctors.html'
-    login_url = 'account:login'
+    login_url = 'authentication:login'
     redirect_field_name = 'doctors.html'
 
     def get_context_data(self, **kwargs):

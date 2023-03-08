@@ -1,0 +1,80 @@
+
+/*** appointment page ***/
+
+.appt-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+}
+
+/*** patient profile ***/
+
+
+.body-appts-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.card-patient-profile {
+    background-color: rgb(251, 250, 252);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.card-details-patient-profile {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.card-details-patient-profile ul li {
+    list-style: none;
+
+}
+
+
+.row {
+    display: flex;
+    margin-bottom: 2rem;
+    justify-content: space-between;
+}
+
+.previous-doctors {
+    margin-left: 5rem;
+    background-color: rgb(251, 250, 252);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.previous-doctors ul {
+    margin-top: 1rem;
+    display: flex;
+}
+
+.previous-doctors ul li h3 {
+    margin-right: 2rem;
+}
+
+.previous-doctors ul li {
+    list-style: none;
+}
+
+.scheduled-appts {
+    margin-top: 3rem;
+    background-color: rgb(251, 250, 252);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.prescriptions {
+    background-color: rgb(251, 250, 252);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    margin-top: 3rem;
+    margin-left: 2rem;
+}
+
+.profile-pic {
+    width: 3rem;
+    margin-top: 1rem;
+    height: 3rem;
+    border-radius: 2rem;
+}
+
+.logo-appointment{
+    display: flex;
+}

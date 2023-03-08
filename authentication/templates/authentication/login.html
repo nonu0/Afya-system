@@ -20,7 +20,7 @@
         <li style="color:red">{{error}}</li>
         {% endif %}
         <p>Don't have an account?...</p><a
-            href="{% url 'account:register' %}{% if request.GET.next %}?next={{request.GET.next}}{% endif %}">Register
+            href="{% url 'authentication:register' %}{% if request.GET.next %}?next={{request.GET.next}}{% endif %}">Register
             Here.</a>
     </div>
 </section>
