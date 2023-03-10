@@ -1,6 +1,11 @@
 import os
 from datetime import timedelta
 from pathlib import Path
+import environ
+
+# Initialise environment variables
+env = environ.Env()
+environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -10,7 +15,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-j&xwe0f8!o($)wou1&myacjh=iqfjkg5q30&^y_sni%k8!^^j6'
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -70,11 +75,11 @@ WSGI_APPLICATION = 'core.wsgi.application'
 DATABASES = {
     'default': {
        'ENGINE': 'django.db.backends.postgresql',
-       'NAME': 'railway',
-       'USER': 'postgres',
-       'PASSWORD': 'Wxw0UyP06InasmjsTAzt',
-       'HOST': 'containers-us-west-182.railway.app',
-       'PORT': '7786',
+       'NAME': env('DATABASE_NAME'),
+       'USER': env('DATABASE_USER'),
+       'PASSWORD': env('DATABASE_PASSWORD'),
+       'HOST': env('DATABASE_HOST'),
+       'PORT': env('DATABASE_PORT'),
     },
 }
 
@@ -110,12 +115,12 @@ USE_I18N = True
 USE_TZ = True
 
 #email config 
-EMAIL_FROM_USER = 'confirmatione34@gmail.com'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'confirmatione34@gmail.com'
-EMAIL_HOST_PASSWORD = 'ibpgbgfxotjuncqn'
-EMAIL_USE_TLS = True
-EMAIL_PORT = 587
+EMAIL_FROM_USER = env('EMAIL_FROM_USER')
+EMAIL_HOST = env('EMAIL_HOST')
+EMAIL_HOST_USER = env('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+EMAIL_USE_TLS = env('EMAIL_USE_TLS')
+EMAIL_PORT = env('EMAIL_PORT')
 
 
 # Static files (CSS, JavaScript, Images)
